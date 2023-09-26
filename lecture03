@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Page Navigation</title>
+    <style>
+        /* Add your CSS styles for navigation and sections here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Background color for the entire page */
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        section h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #333; /* Header text color */
+        }
+
+        section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555; /* Paragraph text color */
+        }
+
+        /* Add additional styles for sections as needed */
+        section img {
+            max-width: 80%; /* Adjust the maximum width of images */
+            border-radius: 10px; /* Add a rounded border to images */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to images */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h1 style="color: #007bff;">Section 1: Introduction to Programming</h1>
+        <p>
+            Programming is the process of designing and creating software applications. It involves writing code to instruct computers to perform specific tasks.
+        </p>
+        <img src="https://via.placeholder.com/400x300" alt="Computer Image 1">
+    </section>
+
+    <section id="section2">
+        <h1 style="color: #dc3545;">Section 2: Popular Programming Languages</h1>
+        <p>
+            There are many programming languages, including Python, JavaScript, Java, and C++. Each has its own strengths and use cases.
+        </p>
+        <img src="https://via.placeholder.com/400x300" alt="Computer Image 2">
+    </section>
+
+    <section id="section3">
+        <h1 style="color: #28a745;">Section 3: Building Web Applications</h1>
+        <p>
+            Web development involves creating websites and web applications. Front-end development focuses on the user interface, while back-end development handles server-side logic.
+        </p>
+        <img src="https://via.placeholder.com/400x300" alt="Computer Image 3">
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $($(this).attr('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000); // Adjust the animation speed as needed
+                }
+            });
+        });
+    </script>
+</body>
+</html>
